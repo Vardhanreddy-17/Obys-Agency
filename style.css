@@ -229,7 +229,7 @@ html,body{
     min-height: 100vh;
     width: 100%;
     position: relative;
-    padding-top: 5vh;
+    padding-top: 7vh 0vw;
 }
 
 #page4-content{
@@ -244,7 +244,7 @@ html,body{
 }
 
 #page4-content .underline{
-    height: 2px;
+    height: 1px;
     width: 100%;
     margin: 5vw 0vw;
     background-color: #fff;
@@ -295,4 +295,79 @@ html,body{
 #blue-div-elem p{
     width: 40%;
     font-size: 0.7vvw;
+}
+
+#page5{
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.elem{
+    white-space: nowrap;
+    overflow-x: hidden;
+    margin-bottom: -2vw;
+}
+
+.elem h1{
+    font-size: 7vw;
+    -webkit-text-stroke: 1px #fff;
+    color: transparent;
+    font-weight: 400;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-right: 16px;
+    animation-name: anime;
+    animation-duration: 12s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes anime{
+    from{
+        transform: translateX(0);
+    }to{
+        transform: translateX(calc(-100% - 20px));
+    }
+}
+
+.elem2{
+    white-space: nowrap;
+    overflow-x: hidden;
+    margin-bottom: -1vw;
+}
+
+.elem2 h1{
+    font-size: 7vw;
+    -webkit-text-stroke: 1px #fff;
+    color: transparent;
+    font-weight: 400;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-right: 16px;
+    animation-name: reverse;
+    animation-duration: 12s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+}
+
+@keyframes reverse {
+    from{
+        transform: translateX(0);
+    }to{
+        transform: translateX(calc(-100% - 20px));
+    }
+}
+
+.elem span{
+    font-family: "silk serif";
+    font-style: italic;
+    color: transparent;
+}
+
+.elem2 span{
+    font-family: "silk serif";
+    font-style: italic;
+    color: transparent;
 }
