@@ -232,8 +232,36 @@ html,body{
 #page3{
     min-height: 100vh;
     width: 100%;
-    background-color: #954747;
     position: relative;
+    padding: 7vh 0vw;
+    background-color: #151515;
+}
+
+
+#page3 h1{
+    font-size: 7vw;
+    text-transform: uppercase;
+    position: relative;
+    margin-left: 28vw;
+}
+
+
+#page3 h1::before{
+    content: "03";
+    position: absolute;
+    font-size: 3vw;
+    font-family: "silk serif";
+    font-weight: 100;
+    left: -12%;
+    top: 8%;
+}
+
+#page3 .underline{
+    height: 1px;
+    width: 100%;
+    margin: 5vw 0vw;
+    background-color: #fff;
+    margin-left: 28vw;
 }
 
 #page4{
