@@ -233,7 +233,7 @@ html,body{
     min-height: 100vh;
     width: 100%;
     position: relative;
-    padding: 7vh 0vw;
+    padding: 7vh 2vw;
     background-color: #151515;
 }
 
@@ -247,7 +247,7 @@ html,body{
 
 
 #page3 h1::before{
-    content: "03";
+    content: "02";
     position: absolute;
     font-size: 3vw;
     font-family: "silk serif";
@@ -262,6 +262,115 @@ html,body{
     margin: 5vw 0vw;
     background-color: #fff;
     margin-left: 28vw;
+}
+
+#image-div-container{
+    padding: 1vw;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.image-div{
+    height: 35vw;
+    width: 27vw;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    margin: 2vw;
+}
+
+.image-div:nth-child(1){
+    height: 29vw;
+    width: 22vw;
+}
+
+.image-div img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.page3-circle1{
+    height: 20vw;
+    width: 20vw;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 23vh;
+    margin-left: 10vw;
+    position: relative;
+}
+
+.page3-circle1 svg{
+    height: 30%;
+}
+
+
+.page3-circle2{
+    height: 20vw;
+    width: 20vw;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.page3-circle2 svg{
+    height: 30%;
+    rotate: -45deg;
+}
+
+.circle-in{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scale: 0;
+    border-radius: 50%;
+    transition: all ease 0.3s;
+}
+
+.circle-in p{
+    font-size: 0.95vw;
+    color: black;
+    width: 60%;
+    font-weight: 500;
+    scale: 0;
+    transition: all ease 0.3s;
+    transition-delay: 0.5s;
+    opacity: 0;
+}
+
+.page3-circle1:hover .circle-in{
+    scale: 1;
+}
+
+.page3-circle1:hover p{
+    scale: 1;
+    opacity: 1;
+}
+
+.page3-circle2:hover .circle-in{
+    scale: 1;
+}
+
+.page3-circle2:hover p{
+    scale: 1;
+    opacity: 1;
 }
 
 #page4{
@@ -483,3 +592,7 @@ html,body{
     font-size: 1vww;
 }
 
+._canvas_container{
+    z-index: 999999 !important;
+    pointer-events: none;
+}
