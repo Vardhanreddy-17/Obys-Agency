@@ -10,6 +10,9 @@ html,body{
     height: 100%;
     width: 100%;
 }
+body{
+    cursor: none;
+}
 #crsr{
     height: 2vw;
     width: 2vw;
@@ -598,4 +601,18 @@ html,body{
 ._canvas_container{
     z-index: 999999 !important;
     pointer-events: none;
+}
+
+#flag{
+    height: 25vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+}
+
+#hero3{
+    position: relative;
+    z-index: 999;
 }

@@ -196,6 +196,24 @@ function cursorAnimation() {
     });
 }
 
+document.addEventListener("mousemove",(dets)=>{
+    gsap.to("#flag",{
+        x:dets.x-100,
+        y:dets.y - 10
+    })
+})
+
+document.querySelector("#hero3").addEventListener("mouseenter",(dets)=>{
+    gsap.to("#flag",{
+        opacity:1
+    })
+})
+
+document.querySelector("#hero3").addEventListener("mouseleave",(dets)=>{
+    gsap.to("#flag",{
+        opacity:0
+    })
+})
 
 sheryAnimation();
 loadAnimation();
