@@ -126,7 +126,79 @@ function sheryAnimation() {
   });
 }
 
+function cursorAnimation() {
+    const video = document.querySelector(".video-container");
+    const cursor = document.querySelector("#crsr");
+    const videoCursor = document.querySelector("#video-cursor");
+
+    if (!video) {
+        console.warn("⚠️ .video-container not found!");
+        return;
+    }
+
+    // FOLLOW NORMAL CURSOR EVERYWHERE
+    window.addEventListener("mousemove", (e) => {
+        gsap.to(cursor, {
+            x: e.clientX,
+            y: e.clientY,
+            duration: 0.2,
+            ease: "power3.out"
+        });
+    });
+
+    //PLAY VIDEO
+    var videoplay = document.querySelector(".video-container video");
+    var flag = 0;
+    video.addEventListener("click",()=>{
+        if(flag === 0){
+            videoplay.play();
+            videoplay.style.opacity = 1
+            document.querySelector("#video-cursor").innerHTML = `<i class="ri-pause-mini-fill"></i>`
+            gsap.to("#video-cursor",{
+                scale:0.5
+            })
+            flag = 1;
+        }else{
+            videoplay.pause();
+            videoplay.style.opacity = 0;
+            document.querySelector("#video-cursor").innerHTML = `<i class="ri-play-mini-fill"></i>`
+            gsap.to("#video-cursor",{
+                scale:1
+            })
+            flag = 0;
+        }
+        
+    })
+
+
+    // ENTER VIDEO
+    video.addEventListener("mouseenter", () => {
+        gsap.to(cursor, { opacity: 0, scale: 0.5, duration: 0.3 });
+        gsap.to(videoCursor, { opacity: 1, scale: 1, duration: 0.3 });
+    });
+
+    // MOVE INSIDE VIDEO
+    video.addEventListener("mousemove", (e) => {
+        const rect = video.getBoundingClientRect();
+
+        gsap.to(videoCursor, {
+            x: e.clientX - 1200,
+            y: e.clientY - 200,
+            duration: 0.2,
+            ease: "power3.out"
+        });
+    });
+
+    // LEAVE VIDEO
+    video.addEventListener("mouseleave", () => {
+        gsap.to(cursor, { opacity: 1, scale: 1, duration: 0.3 });
+        gsap.to(videoCursor, { opacity: 0, scale: 0.3, duration: 0.3 });
+    });
+}
+
+
+sheryAnimation();
 loadAnimation();
 cursorAnimation();
 locomotiveScroll();
-sheryAnimation();
+
